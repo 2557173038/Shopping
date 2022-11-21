@@ -62,5 +62,48 @@ Page({
      */
     onShareAppMessage() {
 
+    },
+    handleGet(){
+        wx.request({
+          url: 'http://localhost:3000/posts?id=1',
+          success:(res)=>{
+              console.log(res.data)
+          }
+        })
+    },
+    handlePost(){
+    wx.request({
+      url: 'http://localhost:3000/posts',
+      method:"POST",
+      data:{
+          username:"kerwin",
+          password:"123"
+      },
+      success:(res)=>{
+          console.log(res)
+      }
+    })
+    },
+    handlePut(){
+        wx.request({
+          url: 'http://localhost:3000/posts/2',
+          method:"PUT",
+          data:{
+            username:"tiechui",
+            password:'666'
+          },
+          success:(res)=>{
+              console.log(res)
+          }
+        })
+    },
+    handleDel(){
+        wx.request({
+          url: 'http://localhost:3000/posts/3',
+          method:"DELETE",
+          data:{
+
+          }
+        })
     }
 })
