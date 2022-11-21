@@ -1,4 +1,5 @@
 // pages/home/home.js
+import{request} from '../../util/request'
 Page({
 
     /**
@@ -64,46 +65,42 @@ Page({
 
     },
     handleGet(){
-        wx.request({
-          url: 'http://localhost:3000/posts?id=1',
-          success:(res)=>{
-              console.log(res.data)
-          }
+        request({
+        url:"/posts"
+        }).then(res=>{
+            console.log(res.data)
+        }).catch(err=>{
+            console.log(err)
         })
     },
     handlePost(){
-    wx.request({
-      url: 'http://localhost:3000/posts',
+    request({
+        url:"/posts",
       method:"POST",
       data:{
           username:"kerwin",
           password:"123"
-      },
-      success:(res)=>{
-          console.log(res)
       }
+    }).then(res=>{
+        console.log(res)
     })
     },
     handlePut(){
-        wx.request({
-          url: 'http://localhost:3000/posts/2',
+        request({
+          url: '/posts/2',
           method:"PUT",
           data:{
-            username:"tiechui",
+            username:"tiecui",
             password:'666'
-          },
-          success:(res)=>{
-              console.log(res)
           }
+        }).then(res=>{
+            console.log(res)
         })
     },
     handleDel(){
-        wx.request({
-          url: 'http://localhost:3000/posts/3',
+        request({
+          url: '/posts/6',
           method:"DELETE",
-          data:{
-
-          }
         })
     }
 })

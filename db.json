@@ -6,7 +6,7 @@
       "author": "typicode"
     },
     {
-      "username": "tiechui",
+      "username": "tiecui",
       "password": "666",
       "id": 2
     },
@@ -19,6 +19,21 @@
       "username": "kerwin",
       "password": "123",
       "id": 5
+    },
+    {
+      "username": "kerwin",
+      "password": "123",
+      "id": 7
+    },
+    {
+      "username": "kerwin",
+      "password": "123",
+      "id": 8
+    },
+    {
+      "username": "kerwin",
+      "password": "123",
+      "id": 9
     }
   ],
   "comments": [
