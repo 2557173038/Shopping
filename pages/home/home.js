@@ -7,9 +7,11 @@ Page({
      */
     data: {
         looplist:[],
-        datalist:[]
+        datalist:[],
+        token:''
     },
 
+    current:1,
     /**
      * 生命周期函数--监听页面加载
      */
@@ -38,11 +40,13 @@ Page({
     //列表数据
     renderList(){
         request({
-            url:"/goods?_page=1&_limit=5"
+            url:`/goods?_page=${this.current}&_limit=5`
         }).then(res=>{
             console.log(res.data)
+            // console.log(res.header["X-Total-Count"])
             this.setData({
-                datalist:res.data
+                datalist:[...this.data.datalist,...res.data],
+                token:res.header["X-Total-Count"]
             })
         })
     },
@@ -71,14 +75,22 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh() {
-
+        setTimeout(()=>{
+            wx.stopPullDownRefresh()//停止下拉刷新
+        },1000)
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
     onReachBottom() {
-        console.log("到底了")
+        // console.log(this.data.datalist.length)
+        if(this.data.datalist.length==this.data.token)
+        {
+            return 
+        }
+        this.current++
+        this.renderList()
     },
 
     /**
@@ -89,6 +101,6 @@ Page({
     },
     handleAjax(){
         console.log("33")
-     
+
     }
 })

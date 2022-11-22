@@ -6,7 +6,7 @@
     "pages/center/center"
   ],
   "window":{
-    "backgroundTextStyle":"light",
+    "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#f0ff9f",
     "navigationBarTextStyle":"black"
   },
