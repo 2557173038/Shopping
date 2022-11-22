@@ -6,7 +6,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        looplist:[]
+        looplist:[],
+        datalist:[]
     },
 
     /**
@@ -20,8 +21,10 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady() {
-        this.renderSwiper()
+        this.renderSwiper()//轮播
+        this.renderList()//列表
     },
+    // 轮播数据
     renderSwiper(){
        request({
            url:"/recommends"
@@ -31,6 +34,17 @@ Page({
             looplist:res.data
         })
        })
+    },
+    //列表数据
+    renderList(){
+        request({
+            url:"/goods?_page=1&_limit=5"
+        }).then(res=>{
+            console.log(res.data)
+            this.setData({
+                datalist:res.data
+            })
+        })
     },
     /**
      * 生命周期函数--监听页面显示
@@ -64,7 +78,7 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom() {
-
+        console.log("到底了")
     },
 
     /**

@@ -5,3 +5,14 @@ width: 100%;
 swiper{
     height:297rpx;
 }
+.list image{
+    width:200rpx;
+    float: left;
+}
+.list .price{
+    color: red;
+}
+.list{
+    overflow: hidden;
+    padding: 20rpx;
+}
