@@ -6,7 +6,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        looplist:[]
     },
 
     /**
@@ -20,9 +20,18 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady() {
-
+        this.renderSwiper()
     },
-
+    renderSwiper(){
+       request({
+           url:"/recommends"
+       }).then(res=>{
+           console.log(res.data)
+        this.setData({
+            looplist:res.data
+        })
+       })
+    },
     /**
      * 生命周期函数--监听页面显示
      */
@@ -64,43 +73,8 @@ Page({
     onShareAppMessage() {
 
     },
-    handleGet(){
-        request({
-        url:"/posts"
-        }).then(res=>{
-            console.log(res.data)
-        }).catch(err=>{
-            console.log(err)
-        })
-    },
-    handlePost(){
-    request({
-        url:"/posts",
-      method:"POST",
-      data:{
-          username:"kerwin",
-          password:"123"
-      }
-    }).then(res=>{
-        console.log(res)
-    })
-    },
-    handlePut(){
-        request({
-          url: '/posts/2',
-          method:"PUT",
-          data:{
-            username:"tiecui",
-            password:'666'
-          }
-        }).then(res=>{
-            console.log(res)
-        })
-    },
-    handleDel(){
-        request({
-          url: '/posts/6',
-          method:"DELETE",
-        })
+    handleAjax(){
+        console.log("33")
+     
     }
 })

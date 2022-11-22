@@ -1,6 +1,6 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
-<button bindtap="handleGet">ajax-get</button>
-<button bindtap="handlePost">ajax-post</button>
-<button bindtap="handlePut">ajax-put</button>
-<button bindtap="handleDel">ajax-del</button>
+<swiper>
+    <swiper-item wx:for="{{looplist}}" wx:key="index">
+        <image src="http://localhost:3000{{item.url}}" mode="widthFix"> </image>
+    </swiper-item>
+</swiper>

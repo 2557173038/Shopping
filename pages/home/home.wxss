@@ -1,1 +1,7 @@
 /* pages/home/home.wxss */
+swiper image{
+width: 100%;
+}
+swiper{
+    height:297rpx;
+}
