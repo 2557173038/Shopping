@@ -4,5 +4,25 @@
     "setting": {
         "compileHotReLoad": false,
         "urlCheck": false
+    },
+    "condition": {
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "",
+                    "pathName": "pages/detail/detail",
+                    "query": "id=7&name=vivo%20U3x",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/detail/detail",
+                    "query": "id=1&name=荣耀9x",
+                    "launchMode": "default",
+                    "scene": null
+                }
+            ]
+        }
     }
 }

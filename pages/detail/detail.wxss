@@ -1,1 +1,9 @@
 /* pages/detail/detail.wxss */
+.swiperImg{
+    width: 100%;
+    height: 200px;
+
+}
+swiper{
+    height: 200px;
+}

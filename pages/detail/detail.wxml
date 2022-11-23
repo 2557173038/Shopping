@@ -1,2 +1,6 @@
 <!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<swiper >
+    <swiper-item wx:for="{{info.slides}}" wx:key="index">
+        <image src="http://localhost:3000/{{item}}" mode="aspectFit" class="swiperImg" bindtap="handleImg" data-url="http://localhost:3000/{{item}}"/>
+    </swiper-item>
+</swiper>
