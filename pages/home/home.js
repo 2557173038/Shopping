@@ -31,7 +31,7 @@ Page({
        request({
            url:"/recommends"
        }).then(res=>{
-           console.log(res.data)
+        //    console.log(res.data)
         this.setData({
             looplist:res.data
         })
@@ -42,7 +42,7 @@ Page({
         request({
             url:`/goods?_page=${this.current}&_limit=5`
         }).then(res=>{
-            console.log(res.data)
+            // console.log(res.data)
             // console.log(res.header["X-Total-Count"])
             this.setData({
                 datalist:[...this.data.datalist,...res.data],
@@ -104,5 +104,15 @@ Page({
     },
     handleEvent(){
       console.log("搜索触发")
+    },
+    handleChangePage(evt){
+        // wx.redirectTo 跳转页面并关闭当前页面
+        // wx.switchTab 跳转底下导航栏路径
+    //    console.log(evt.currentTarget.dataset.id)
+    let id=evt.currentTarget.dataset.id
+    let name=evt.currentTarget.dataset.name
+        wx.navigateTo({// 跳转页面 不关闭当前页面
+          url: `/pages/detail/detail?id=${id}&name=${name}`,
+        })
     }
 })

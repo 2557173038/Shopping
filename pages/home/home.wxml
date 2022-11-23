@@ -12,7 +12,7 @@
 </mp-sticky>
 
 
-<view wx:for="{{datalist}}" wx:key="index" class="list">
+<view wx:for="{{datalist}}" wx:key="index" class="list" bindtap="handleChangePage" data-id="{{item.id}}" data-name="{{item.title}}">
 <image src="http://localhost:3000{{item.poster}}" mode="widthFix"/>
 <view>
 <view>{{item.title}}</view>

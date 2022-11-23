@@ -3,7 +3,8 @@
     "pages/home/home",
     "pages/category/category",
     "pages/shopcar/shopcar",
-    "pages/center/center"
+    "pages/center/center",
+    "pages/detail/detail"
   ],
   "window":{
     "backgroundTextStyle":"dark",
