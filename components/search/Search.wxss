@@ -1,0 +1,11 @@
+/* components/search/Search.wxss */
+input {
+    border: 2rpx solid;
+    border-radius: 10rpx;
+    padding: 10rpx;
+    margin: 10rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    background-color: white;
+    opacity: 0.8;
+}

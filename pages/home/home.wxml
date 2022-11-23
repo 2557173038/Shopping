@@ -5,6 +5,13 @@
     </swiper-item>
 </swiper>
 
+<mp-sticky offset-top="0px" >
+<view style="width: 100vw;">
+<Search bindevent="handleEvent" ></Search>
+</view>
+</mp-sticky>
+
+
 <view wx:for="{{datalist}}" wx:key="index" class="list">
 <image src="http://localhost:3000{{item.poster}}" mode="widthFix"/>
 <view>

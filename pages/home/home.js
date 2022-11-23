@@ -101,6 +101,8 @@ Page({
     },
     handleAjax(){
         console.log("33")
-
+    },
+    handleEvent(){
+      console.log("搜索触发")
     }
 })
