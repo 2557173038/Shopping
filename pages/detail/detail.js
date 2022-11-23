@@ -6,7 +6,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        info:null
+        info:null,
+        current:0
     },
 
     /**
@@ -23,7 +24,7 @@ Page({
         request({
             url:`/goods/${id}`
         }).then(res=>{
-            // console.log(res.data)
+            console.log(res.data)
             this.setData({
                 info:res.data
             })
@@ -86,5 +87,11 @@ Page({
             current:url, // 当前显示图片的 http 链接
             urls:this.data.info.slides.map(item=>`http://localhost:3000${item}`)// 需要预览的图片 http 链接列表
           })
+    },
+    handleacitve(evt){
+        // console.log(evt.currentTarget.dataset.index)
+        this.setData({
+            current:evt.currentTarget.dataset.index
+        })
     }
 })

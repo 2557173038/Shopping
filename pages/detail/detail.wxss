@@ -7,3 +7,18 @@
 swiper{
     height: 200px;
 }
+.detatabber{
+    width: 100vw;
+    display: flex;
+    height: 100rpx;
+    line-height: 100rpx;
+    background-color: white;
+    padding: 20rpx;
+    text-align: center;
+}
+.detatabber view{
+    flex:1
+}
+.detatabber .active{
+    border-bottom: 3rpx solid pink;
+}

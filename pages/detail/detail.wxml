@@ -4,3 +4,17 @@
         <image src="http://localhost:3000/{{item}}" mode="aspectFit" class="swiperImg" bindtap="handleImg" data-url="http://localhost:3000/{{item}}"/>
     </swiper-item>
 </swiper>
+<mp-sticky offset-top="0px" >
+<view class="detatabber">
+    <view class="{{current===0?'active':''}}" bindtap="handleacitve" data-index="{{0}}">商品详情</view>
+    <view class="{{current===1?'active':''}}" bindtap="handleacitve" data-index="{{1}}">用户评价</view>
+</view>
+</mp-sticky>
+
+<view wx:if="{{!current}}">
+<image wx:for="{{info.desc}}" src="{{item}}" mode="widthFix" wx:key="index" style="width: 100%;"/>
+</view>
+
+<view wx:else="">
+222
+</view>
