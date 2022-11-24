@@ -4,7 +4,8 @@
     "pages/category/category",
     "pages/shopcar/shopcar",
     "pages/center/center",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/seacrh/search"
   ],
   "window":{
     "backgroundTextStyle":"dark",
@@ -39,5 +40,8 @@
     ]
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui":true
+}
 }

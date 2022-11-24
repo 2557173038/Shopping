@@ -17,8 +17,8 @@
                 },
                 {
                     "name": "",
-                    "pathName": "pages/detail/detail",
-                    "query": "id=1&name=荣耀9x",
+                    "pathName": "pages/seacrh/search",
+                    "query": "",
                     "launchMode": "default",
                     "scene": null
                 }

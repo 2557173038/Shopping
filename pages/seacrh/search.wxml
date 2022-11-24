@@ -1,0 +1,5 @@
+<!--pages/seacrh/search.wxml-->
+
+<mp-searchbar bindselectresult="selectResult" search="{{search}}">
+
+</mp-searchbar>

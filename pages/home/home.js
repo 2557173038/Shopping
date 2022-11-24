@@ -104,6 +104,9 @@ Page({
     },
     handleEvent(){
       console.log("搜索触发")
+      wx.navigateTo({
+        url: '/pages/seacrh/search',
+      })
     },
     handleChangePage(evt){
         // wx.redirectTo 跳转页面并关闭当前页面
