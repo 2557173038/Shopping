@@ -7,7 +7,8 @@ Page({
      */
     data: {
         info:null,
-        current:0
+        current:0,
+        commentList:[]
     },
 
     /**
@@ -19,7 +20,8 @@ Page({
           title: options.name,
         })
         this.getDetailInfo(options.id)
-    },
+        this.getDetailComments()
+        },
     getDetailInfo(id){
         request({
             url:`/goods/${id}`
@@ -27,6 +29,17 @@ Page({
             console.log(res.data)
             this.setData({
                 info:res.data
+            })
+        })
+    },
+    getDetailComments(){
+        request({
+        url:"/comments"
+
+        }).then(res=>{
+            console.log(res.data)
+            this.setData({
+                commentList:res.data
             })
         })
     },
