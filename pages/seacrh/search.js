@@ -92,5 +92,16 @@ Page({
     },
     selectResult(e){
         console.log('select',e.detail)
+        if(e.detail.item.type===1){
+            console.log("搜索列表",e.detail.item)
+            wx.navigateTo({
+              url: `/pages/seacrhlist/searchlist?id=${e.detail.item.id}`,
+            })
+        }else{
+            // console.log("详情页面")
+            wx.navigateTo({
+              url: `/pages/detail/detail?id=${e.detail.item.id}&name=${e.detail.item.title}`,
+            })
+        }
     }
 })

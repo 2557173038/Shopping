@@ -5,7 +5,8 @@
     "pages/shopcar/shopcar",
     "pages/center/center",
     "pages/detail/detail",
-    "pages/seacrh/search"
+    "pages/seacrh/search",
+    "pages/seacrhlist/searchlist"
   ],
   "window":{
     "backgroundTextStyle":"dark",
