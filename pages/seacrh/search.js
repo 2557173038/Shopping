@@ -68,9 +68,9 @@ Page({
     },
 
     search:function(value){
-        if(value===''){
-            return
-        }
+        // if(value===''){
+        //     return
+        // }
         return Promise.all([ //获取多个promise对象
             request({
                 url:`/categories?title_like=${value}`
@@ -91,7 +91,7 @@ Page({
         })
     },
     selectResult(e){
-        console.log('select',e.detail)
+        // console.log('select',e.detail)
         if(e.detail.item.type===1){
             console.log("搜索列表",e.detail.item)
             wx.navigateTo({

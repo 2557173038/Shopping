@@ -1,4 +1,4 @@
-<!--pages/seacrh/search.wxml-->
+<!--搜索框-->
 
 <mp-searchbar bindselectresult="selectResult" search="{{search}}">
 

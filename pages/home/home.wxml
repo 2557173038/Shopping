@@ -1,4 +1,4 @@
-<!--pages/home/home.wxml-->
+<!--主页-->
 <swiper>
     <swiper-item wx:for="{{looplist}}" wx:key="index">
         <image src="http://localhost:3000{{item.url}}" mode="widthFix"> </image>

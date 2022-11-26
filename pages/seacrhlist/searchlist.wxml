@@ -1,4 +1,4 @@
-<!--pages/seacrhlist/searchlist.wxml-->
+<!--搜索界面-->
 
 <view class="sortlist">
 <view bindtap="handlePrice">价格排序

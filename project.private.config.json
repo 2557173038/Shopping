@@ -5,31 +5,5 @@
         "compileHotReLoad": false,
         "urlCheck": false
     },
-    "condition": {
-        "miniprogram": {
-            "list": [
-                {
-                    "name": "",
-                    "pathName": "pages/detail/detail",
-                    "query": "id=7&name=vivo%20U3x",
-                    "launchMode": "default",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/seacrh/search",
-                    "query": "",
-                    "launchMode": "default",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/seacrhlist/searchlist",
-                    "query": "id=5&name=vivo",
-                    "launchMode": "default",
-                    "scene": null
-                }
-            ]
-        }
-    }
+    "condition": {}
 }
