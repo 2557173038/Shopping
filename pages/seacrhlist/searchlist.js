@@ -1,11 +1,12 @@
 // pages/seacrhlist/searchlist.js
+import {request} from '../../util/request'
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        goodsList:[]
     },
 
     /**
@@ -13,6 +14,20 @@ Page({
      */
     onLoad(options) {
         console.log(options)
+        wx.setNavigationBarTitle({
+          title: options.name,
+        })
+        this.getList(options.id)
+    },
+    getList(id){
+        request({
+            url:`/categories/${id}?_embed=goods`//跨连整合
+        }).then(res=>{
+            console.log(res.data.goods)
+        this.setData({
+            goodsList:res.data.goods
+        })
+        })
     },
 
     /**
@@ -62,5 +77,10 @@ Page({
      */
     onShareAppMessage() {
 
+    },
+    handleTap(e){
+        wx.navigateTo({
+            url: `/pages/detail/detail?id=${e.currentTarget.dataset.id}&name=${e.currentTarget.dataset.name}`,
+          })
     }
 })

@@ -21,6 +21,13 @@
                     "query": "",
                     "launchMode": "default",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/seacrhlist/searchlist",
+                    "query": "id=5&name=vivo",
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }

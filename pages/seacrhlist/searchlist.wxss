@@ -1,1 +1,14 @@
 /* pages/seacrhlist/searchlist.wxss */
+.goodcontent{
+    display: flex;
+    flex-wrap: wrap;
+}
+.goodcontent .good{
+    width: 50%;
+    padding: 20rpx;
+    box-sizing: border-box;
+    text-align: center;
+}
+image{
+    width: 100%;
+}

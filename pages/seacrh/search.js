@@ -95,7 +95,7 @@ Page({
         if(e.detail.item.type===1){
             console.log("搜索列表",e.detail.item)
             wx.navigateTo({
-              url: `/pages/seacrhlist/searchlist?id=${e.detail.item.id}`,
+              url: `/pages/seacrhlist/searchlist?id=${e.detail.item.id}&name=${e.detail.item.title}`,
             })
         }else{
             // console.log("详情页面")

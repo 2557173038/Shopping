@@ -1,2 +1,9 @@
 <!--pages/seacrhlist/searchlist.wxml-->
-<text>pages/seacrhlist/searchlist.wxml</text>
+<view class="goodcontent">
+<view wx:for="{{goodsList}}" wx:key="index" class="good" data-id="{{item.id}}" data-name="{{item.title}}" bindtap="handleTap">
+<image src="http://localhost:3000{{item.poster}}" mode="widthFix"/>
+<view>{{item.title}}</view>
+<view style="color: red;">价格￥ {{item.price}}</view>
+<view> 好评率： {{item.goodcomment}}</view>
+</view>
+</view>
