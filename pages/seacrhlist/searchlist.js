@@ -8,6 +8,8 @@ Page({
     data: {
         goodsList:[]
     },
+    priceOrder:true,
+    commentOrder:true,
 
     /**
      * 生命周期函数--监听页面加载
@@ -82,5 +84,19 @@ Page({
         wx.navigateTo({
             url: `/pages/detail/detail?id=${e.currentTarget.dataset.id}&name=${e.currentTarget.dataset.name}`,
           })
+    },
+    handlePrice(){
+        this.priceOrder=!this.priceOrder
+        this.setData({
+            //排序
+            goodsList:this.priceOrder?this.data.goodsList.sort((item1,item2)=>item1.price-item2.price):this.data.goodsList.sort((item1,item2)=>item2.price-item1.price)
+        })
+    },
+    handleComment(){
+        this.commentOrder=!this.commentOrder
+        this.setData({
+            //排序
+            goodsList:this.commentOrder?this.data.goodsList.sort((item1,item2)=>parseInt(item1.goodcomment)-parseInt(item2.goodcomment)):this.data.goodsList.sort((item1,item2)=>parseInt(item2.goodcomment)-parseInt(item1.goodcomment))
+        })
     }
 })

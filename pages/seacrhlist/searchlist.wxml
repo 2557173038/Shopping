@@ -1,4 +1,14 @@
 <!--pages/seacrhlist/searchlist.wxml-->
+
+<view class="sortlist">
+<view bindtap="handlePrice">价格排序
+<mp-icon type="field" icon="refresh" color="black" size="{{25}}"></mp-icon>
+</view>
+<view bindtap="handleComment">好评排序
+<mp-icon type="field" icon="refresh" color="black" size="{{25}}"></mp-icon>
+</view>
+</view>
+
 <view class="goodcontent">
 <view wx:for="{{goodsList}}" wx:key="index" class="good" data-id="{{item.id}}" data-name="{{item.title}}" bindtap="handleTap">
 <image src="http://localhost:3000{{item.poster}}" mode="widthFix"/>
