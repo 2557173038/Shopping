@@ -1,2 +1,19 @@
 <!--分类-->
-<text>pages/category/category.wxml</text>
+<mp-vtabs 
+  vtabs="{{vtabs}}" 
+  activeTab="{{activeTab}}" 
+  bindtabclick="onTabCLick"
+  bindchange="onChange"
+  class="test"
+>
+  <block wx:for="{{vtabs}}" wx:key="title" >
+    <mp-vtabs-content tabIndex="{{index}}">
+      <view class="vtabs-content-item" >
+      <view wx:for="{{item.goods}}" wx:key="id" class="item" bindtap="handleTo" data-id="{{item.id}}" data-name="{{item.title}}">
+      <image src="http://localhost:3000{{item.poster}}" mode="widthFix"/>
+      <view>{{item.title}}</view>
+      </view>
+      </view>
+    </mp-vtabs-content>
+  </block>
+</mp-vtabs>

@@ -1,1 +1,22 @@
 /* pages/category/category.wxss */
+.vtabs-content-item{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+.vtabs-content-item .item{
+    width: 50%;
+    box-sizing: border-box;
+    padding: 30rpx;
+}
+.vtabs-content-item image{
+    width: 200rpx;
+}
+.item view{
+    text-align: center;
+    font-size: 13px;
+}
+page{
+    background-color: #FFFFFF;
+    height: 100%;
+}

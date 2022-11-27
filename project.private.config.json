@@ -5,5 +5,17 @@
         "compileHotReLoad": false,
         "urlCheck": false
     },
-    "condition": {}
+    "condition": {
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "",
+                    "pathName": "pages/category/category",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                }
+            ]
+        }
+    }
 }
