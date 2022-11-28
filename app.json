@@ -6,7 +6,9 @@
     "pages/center/center",
     "pages/detail/detail",
     "pages/seacrh/search",
-    "pages/seacrhlist/searchlist"
+    "pages/seacrhlist/searchlist",
+    "pages/auth/auth",
+    "pages/telform/telform"
   ],
   "window":{
     "backgroundTextStyle":"dark",

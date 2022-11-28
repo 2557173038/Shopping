@@ -1,5 +1,6 @@
 // pages/detail/detail.js
 import {request} from "../../util/request"
+import checkAuth from "../../util/auth"
 Page({
 
     /**
@@ -105,6 +106,17 @@ Page({
         // console.log(evt.currentTarget.dataset.index)
         this.setData({
             current:evt.currentTarget.dataset.index
+        })
+    },
+    // 加入购物车
+    handleAdd(){
+        // console.log("add")
+
+        //判断本地存储是否有手机号信息，如果有直接加入
+        //没有手机号，判断是否有token信息，如果有，引导调整手机号绑定
+        //没有token授权信息，我们引导用户授权页面
+        checkAuth(()=>{
+            console.log("准备加入购物车")
         })
     }
 })
