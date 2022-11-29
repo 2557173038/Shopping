@@ -5,7 +5,7 @@ function checkAuth(callback){
     }else{
         if(wx.getStorageSync('token')){
             wx.navigateTo({
-              url: '/pahes/telform/telform',
+              url: '/pages/telform/telform',
             })
         }else{
             wx.navigateTo({

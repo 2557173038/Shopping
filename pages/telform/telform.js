@@ -1,12 +1,13 @@
 // pages/telform/telform.js
+import {request} from "../../util/request"
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
-    },
+        tel:''
+        },
 
     /**
      * 生命周期函数--监听页面加载
@@ -62,5 +63,40 @@ Page({
      */
     onShareAppMessage() {
 
+    },
+    formInputChange(evt){
+        // console.log(evt.detail.value)
+        this.setData({
+            tel:evt.detail.value
+        })
+        
+    },
+    submitForm(){
+        wx.setStorageSync('tel', this.data.tel)
+
+        request({
+            url:`/users?tel=${this.data.tel}`
+        }).then(res=>{
+            console.log(res.data)
+            if(res.data.length===0){
+                request({
+                    url:'/users',
+                    method:'POST',
+                    data:{
+                        ...wx.getStorageSync('token'),
+                        tel:this.data.tel
+                    }
+                }).then(res=>{
+                    console.log(res.data)
+                   wx.navigateBack({
+                       delta:2
+                   })
+                })
+            }else{
+                wx.navigateBack({
+                    delta:2
+        })
     }
+    })
+}
 })

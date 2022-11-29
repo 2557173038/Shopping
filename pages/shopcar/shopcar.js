@@ -1,4 +1,6 @@
 // pages/shopcar/shopcar.js
+import checkAuth from "../../util/auth"
+
 Page({
 
     /**
@@ -12,21 +14,23 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-
+       
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady() {
-
+      
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow() {
-
+        checkAuth(()=>{
+            console.log("显示购物车")
+    })
     },
 
     /**
