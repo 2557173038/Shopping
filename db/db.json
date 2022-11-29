@@ -724,7 +724,7 @@
       "username": "饮冰",
       "tel": "111",
       "goodId": 1,
-      "number": 3,
+      "number": 4,
       "checked": false,
       "id": 1
     },
@@ -759,6 +759,14 @@
       "number": 3,
       "checked": false,
       "id": 6
+    },
+    {
+      "username": "小企鹅",
+      "tel": "111",
+      "goodId": 3,
+      "number": 6,
+      "checked": false,
+      "id": 7
     }
   ],
   "users": [

@@ -1,5 +1,7 @@
 // pages/detail/detail.js
-import {request} from "../../util/request"
+import {
+    request
+} from "../../util/request"
 import checkAuth from "../../util/auth"
 Page({
 
@@ -7,9 +9,9 @@ Page({
      * 页面的初始数据
      */
     data: {
-        info:null,
-        current:0,
-        commentList:[]
+        info: null,
+        current: 0,
+        commentList: []
     },
 
     /**
@@ -18,29 +20,29 @@ Page({
     onLoad(options) {
         // console.log("基于上个列表页面传来的id，根后端取当前页面的id对应的详细信息",options)
         wx.setNavigationBarTitle({
-          title: options.name,
+            title: options.name,
         })
         this.getDetailInfo(options.id)
         this.getDetailComments()
-        },
-    getDetailInfo(id){
+    },
+    getDetailInfo(id) {
         request({
-            url:`/goods/${id}`
-        }).then(res=>{
+            url: `/goods/${id}`
+        }).then(res => {
             console.log(res.data)
             this.setData({
-                info:res.data
+                info: res.data
             })
         })
     },
-    getDetailComments(){
+    getDetailComments() {
         request({
-        url:"/comments"
+            url: "/comments"
 
-        }).then(res=>{
+        }).then(res => {
             console.log(res.data)
             this.setData({
-                commentList:res.data
+                commentList: res.data
             })
         })
     },
@@ -92,31 +94,80 @@ Page({
     onShareAppMessage() {
 
     },
-    handleImg(evt){
+    handleImg(evt) {
         // console.log(evt.currentTarget.dataset.url)
         // console.log(this.data.info.slides.map(item=>`http://localhost:3000${item}`))
-        let url=evt.currentTarget.dataset.url
+        let url = evt.currentTarget.dataset.url
         console.log(url)
         wx.previewImage({
-            current:url, // 当前显示图片的 http 链接
-            urls:this.data.info.slides.map(item=>`http://localhost:3000${item}`)// 需要预览的图片 http 链接列表
-          })
+            current: url, // 当前显示图片的 http 链接
+            urls: this.data.info.slides.map(item => `http://localhost:3000${item}`) // 需要预览的图片 http 链接列表
+        })
     },
-    handleacitve(evt){
+    handleacitve(evt) {
         // console.log(evt.currentTarget.dataset.index)
         this.setData({
-            current:evt.currentTarget.dataset.index
+            current: evt.currentTarget.dataset.index
         })
     },
     // 加入购物车
-    handleAdd(){
+    handleAdd() {
         // console.log("add")
 
         //判断本地存储是否有手机号信息，如果有直接加入
         //没有手机号，判断是否有token信息，如果有，引导调整手机号绑定
         //没有token授权信息，我们引导用户授权页面
-        checkAuth(()=>{
+        checkAuth(() => {
             console.log("准备加入购物车")
+            let {
+                nickName
+            } = wx.getStorageSync('token')
+            let tel = wx.getStorageSync('tel')
+            var goodId = this.data.info.id
+            // console.log(nickName,tel,goodId)
+
+            request({
+                url: '/carts',
+                data: {
+                    tel,
+                    goodId,
+                   nickName,
+                }
+            }).then(res => {
+                console.log(res.data)
+                if (res.data.length === 0){
+                    request({
+                        url: `/carts`,
+                       method:'post',
+                        data: {
+                            "username":nickName,
+                            "tel": tel,
+                            "goodId":goodId,
+                            "number": 1,
+                            "checked": false,
+                        }
+                    })
+                }else{
+                    request({
+                        url: `/carts/${res.data[0].id}`,
+                        method:'put',
+                        data: {
+                            ...res.data[0],
+                            number:res.data[0].number+1
+                         }
+                    })
+                }
+            }).then(res=>{
+                wx.showToast({
+                  title: '加入购物车成功',
+
+                })
+            })
+        })
+    },
+    handleChange(){
+        wx.switchTab({
+          url: '/pages/shopcar/shopcar',
         })
     }
 })
