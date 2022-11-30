@@ -1,1 +1,26 @@
 /* pages/shopcar/shopcar.wxss */
+.cellfooter text{
+    width: 60rpx;
+    display: inline-block;
+    background-color: gainsboro;
+    text-align: center;
+}
+.cellicon image{
+    width: 150rpx;
+    height: 150rpx;
+}
+.cellicon{
+    display: flex;
+}
+.footer{
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 80rpx;
+    line-height: 80rpx;
+    background-color: white;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}

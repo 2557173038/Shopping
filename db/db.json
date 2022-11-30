@@ -764,9 +764,17 @@
       "username": "小企鹅",
       "tel": "111",
       "goodId": 3,
-      "number": 6,
+      "number": 7,
       "checked": false,
       "id": 7
+    },
+    {
+      "username": "小企鹅",
+      "tel": "111",
+      "goodId": 8,
+      "number": 1,
+      "checked": false,
+      "id": 8
     }
   ],
   "users": [

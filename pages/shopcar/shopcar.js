@@ -7,7 +7,12 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        slideButtons:[{
+            text:'删除',
+            type:'warn',
+            // extClass:'test',
+            // src:'/page/weio/cell/icon_del.svg'
+        }]
     },
 
     /**
@@ -66,5 +71,8 @@ Page({
      */
     onShareAppMessage() {
 
+    },
+    slidButtonTap(){
+        console.log("删除成功")
     }
 })

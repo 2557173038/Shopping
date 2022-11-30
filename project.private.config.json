@@ -42,6 +42,13 @@
                     "query": "",
                     "launchMode": "default",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/shopcar/shopcar",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }

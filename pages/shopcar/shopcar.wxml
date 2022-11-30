@@ -1,2 +1,29 @@
 <!--pages/shopcar/shopcar.wxml-->
-<text>pages/shopcar/shopcar.wxml</text>
+<mp-cells ext-class="my-cells" title="配送至旅游商贸" footer="左滑删除">
+    <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slidButtonTap">
+    <mp-cell>
+       <view slot="footer" class="cellfooter">
+       <text>-</text>
+       <text>8</text>
+       <text>+</text>
+       </view>
+       <view slot="icon" class="cellicon">
+       <checkbox></checkbox>
+       <image src="http://localhost:3000/images/1/poster.jpg" mode="aspectFit"/>
+       <view style="font-size: 13px;">
+        <view>荣耀9x</view>
+       <view style="color: red;">￥ 999</view>
+       </view>
+   
+       </view>
+    </mp-cell>
+</mp-slideview>
+
+</mp-cells>
+
+<view class="footer">
+<checkbox></checkbox>
+<view>全选</view>
+<view style="margin-left: 20px;">合计：￥10000.00</view>
+<button type="primary" size="mini">去结算</button>
+</view>
