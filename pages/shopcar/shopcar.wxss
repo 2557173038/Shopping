@@ -5,6 +5,10 @@
     background-color: gainsboro;
     text-align: center;
 }
+.cellfooter{
+    display: flex;
+}
+
 .cellicon image{
     width: 150rpx;
     height: 150rpx;

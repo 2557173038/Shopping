@@ -1,20 +1,21 @@
 <!--pages/shopcar/shopcar.wxml-->
 <mp-cells ext-class="my-cells" title="配送至旅游商贸" footer="左滑删除">
     <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slidButtonTap">
-    <mp-cell>
+    <mp-cell wx:for="{{shopcarList}}" wx:key="index">
+    
+       <view slot="icon" class="cellicon">
+       <checkbox checked="{{item.checked}}" ></checkbox>
+       <image src="http://localhost:3000{{item.good.poster}}" mode="aspectFit"/>
+       <view style="font-size: 13px;">
+        <view>{{item.good.title}}x</view>
+       <view style="color: red;">￥ {{item.good.price}}</view>
+       </view>
+       </view>
+
        <view slot="footer" class="cellfooter">
        <text>-</text>
-       <text>8</text>
+       <text>{{item.number}}</text>
        <text>+</text>
-       </view>
-       <view slot="icon" class="cellicon">
-       <checkbox></checkbox>
-       <image src="http://localhost:3000/images/1/poster.jpg" mode="aspectFit"/>
-       <view style="font-size: 13px;">
-        <view>荣耀9x</view>
-       <view style="color: red;">￥ 999</view>
-       </view>
-   
        </view>
     </mp-cell>
 </mp-slideview>

@@ -110,7 +110,7 @@ Page({
             current: evt.currentTarget.dataset.index
         })
     },
-    // 加入购物车
+    //点击事件-加入购物车
     handleAdd() {
         // console.log("add")
 
@@ -145,6 +145,7 @@ Page({
                             "goodId":goodId,
                             "number": 1,
                             "checked": false,
+                            "img":this.data.info.poster
                         }
                     })
                 }else{

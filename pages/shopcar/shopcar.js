@@ -1,5 +1,6 @@
 // pages/shopcar/shopcar.js
 import checkAuth from "../../util/auth"
+import {request} from "../../util/request"
 
 Page({
 
@@ -10,16 +11,27 @@ Page({
         slideButtons:[{
             text:'删除',
             type:'warn',
-            // extClass:'test',
-            // src:'/page/weio/cell/icon_del.svg'
-        }]
+        }],
+        shopcarList:[]
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-       
+    },
+    getShopcarList(){
+        let {nickName}=wx.getStorageSync('token')
+        let tel=wx.getStorageSync('tel')
+        request({
+            url:`/carts?_expand=good&username=${nickName}&tel=${tel}`
+        }).then(res=>{
+            console.log(res.data)
+            this.setData({
+                shopcarList:res.data
+            })
+        })
+        
     },
 
     /**
@@ -34,7 +46,7 @@ Page({
      */
     onShow() {
         checkAuth(()=>{
-            console.log("显示购物车")
+       this.getShopcarList()
     })
     },
 
