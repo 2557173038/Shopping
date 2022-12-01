@@ -69,5 +69,31 @@ Page({
      */
     onShareAppMessage() {
 
+    },
+    // 头像模块
+    handleImg(){
+        //打开摄像头/相册功能
+        wx.chooseImage({
+            count: 1,
+            sizeType: ['original', 'compressed'],
+            sourceType: ['album', 'camera'],
+            success :(res)=> {
+              // tempFilePath可以作为 img 标签的 src 属性显示图片
+              const tempFilePaths = res.tempFilePaths
+              console.log(tempFilePaths)
+
+              this.setData({
+                  userInfo:{
+                    ...this.data.userInfo,
+                    avatarUrl:tempFilePaths[0]
+                  }
+              })
+              wx.setStorageSync('token',{
+                  ...   wx.setStorageSync('token'),
+                avatarUrl:tempFilePaths[0]
+
+              })
+            }
+          })
     }
 })

@@ -1,6 +1,6 @@
 <!--pages/center/center.wxml-->
 <view class="userInfo">
-<image src="{{userInfo.avatarUrl}}"></image>
+<image src="{{userInfo.avatarUrl}}" bindtap="handleImg"></image>
 <view>{{userInfo.nickName}}</view>
 </view>
 
@@ -8,11 +8,9 @@
     <mp-cell>
         <mp-icon type="field" icon="me" color="#ff00ff" size="{{25}}" slot="icon"></mp-icon>
         <view>完善信息</view>
-        <view slot="footer">说明文字</view>
     </mp-cell>
     <mp-cell>
         <mp-icon type="field" icon="like" color="#ff00ff" size="{{25}}" slot="icon"></mp-icon>
         <view>个性设置</view>
-        <view slot="footer">说明文字</view>
     </mp-cell>
 </mp-cells>
