@@ -23,7 +23,9 @@
 <view wx:else style="text-align: center;">购物车空空如也</view>
 <wxs src="./shopcar.wxs" module="calobj"></wxs>
 <view class="footer">
-<checkbox></checkbox>
+<checkbox-group bindchange="handlechange" >
+    <checkbox value="1" checked="{{calobj.check(shopcarList)}}"></checkbox>
+</checkbox-group>
 <view>全选</view>
 <view style="margin-left: 20px;">合计：￥{{calobj.sum(shopcarList)}}</view>
 <button type="primary" size="mini">去结算</button>

@@ -7,6 +7,16 @@ function sum(list){
     } 
     return total
 }
+
+function check(list){
+    if(list.length===0){
+        return false
+    }
+   return list.every(function(item){
+    return item.checked===true
+    })
+}
 module.exports={
-    sum:sum
+    sum:sum,
+    check:check
 }

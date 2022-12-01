@@ -142,5 +142,24 @@ Page({
         item.number++
         this.handleUpdate(item)
 
+    },
+    //全选按钮
+    handlechange(evt){
+        console.log(evt.detail.value)
+        if(evt.detail.value==1){
+            this.setData({
+                shopcarList:this.data.shopcarList.map(item=>({
+                    ...item,
+                    checked:true
+                }))
+            })
+        }else{
+            this.setData({
+                shopcarList:this.data.shopcarList.map(item=>({
+                    ...item,
+                    checked:false
+                }))
+            })
+        }
     }
 })

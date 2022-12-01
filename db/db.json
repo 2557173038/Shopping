@@ -732,13 +732,13 @@
       "username": "饮冰",
       "tel": "111",
       "goodId": 10,
-      "number": 1,
+      "number": 2,
       "checked": false,
       "id": 2
     },
     {
       "username": "饮冰",
-      "number": 2,
+      "number": 4,
       "goodId": 14,
       "tel": "111",
       "checked": true,
@@ -763,10 +763,38 @@
     {
       "username": "小企鹅",
       "tel": "111",
-      "goodId": 8,
-      "number": 5,
-      "checked": true,
+      "goodId": 4,
+      "number": 1,
+      "checked": false,
+      "img": "/images/4/poster.jpg",
       "id": 7
+    },
+    {
+      "username": "小企鹅",
+      "tel": "111",
+      "goodId": 5,
+      "number": 1,
+      "checked": false,
+      "img": "/images/5/poster.jpg",
+      "id": 8
+    },
+    {
+      "username": "小企鹅",
+      "tel": "111",
+      "goodId": 9,
+      "number": 1,
+      "checked": false,
+      "img": "/images/9/poster.jpg",
+      "id": 9
+    },
+    {
+      "username": "小企鹅",
+      "tel": "111",
+      "goodId": 13,
+      "number": 1,
+      "checked": false,
+      "img": "/images/13/poster.jpg",
+      "id": 10
     }
   ],
   "users": [
