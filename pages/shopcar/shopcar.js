@@ -85,8 +85,19 @@ Page({
     onShareAppMessage() {
 
     },
-    slidButtonTap() {
-        console.log("删除成功")
+    //删除功能
+    slidButtonTap(evt) {
+        console.log("删除成功",evt.currentTarget.dataset.id)
+        var id=evt.currentTarget.dataset.id
+        this.setData({
+            shopcarList:this.data.shopcarList.filter(item=>item.id!==evt.currentTarget.dataset.id)//过滤，相等的就是删除的，不相等的就是没删除，留下来的就是没删除的
+        })
+
+        request({
+            url:`/carts/${id}`,
+            method:'delete'
+        })
+     
     },
     handleTap(evt) {
         // console.log(evt.currentTarget.dataset.item)

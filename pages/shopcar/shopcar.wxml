@@ -1,6 +1,6 @@
 <!--pages/shopcar/shopcar.wxml-->
-<mp-cells ext-class="my-cells" title="配送至旅游商贸" footer="左滑删除" >
-    <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slidButtonTap"  wx:for="{{shopcarList}}" wx:key="index">
+<mp-cells ext-class="my-cells" title="配送至旅游商贸" footer="左滑删除" wx:if="{{shopcarList.length}}">
+    <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slidButtonTap"  wx:for="{{shopcarList}}" wx:key="index" data-id="{{item.id}}">
     <mp-cell >
        <view slot="icon" class="cellicon">
        <checkbox checked="{{item.checked}}" bindtap="handleTap" data-item="{{item}}"></checkbox>
@@ -20,6 +20,7 @@
 </mp-slideview>
 
 </mp-cells>
+<view wx:else style="text-align: center;">购物车空空如也</view>
 <wxs src="./shopcar.wxs" module="calobj"></wxs>
 <view class="footer">
 <checkbox></checkbox>
