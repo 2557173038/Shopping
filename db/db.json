@@ -764,7 +764,7 @@
       "username": "小企鹅",
       "tel": "111",
       "goodId": 3,
-      "number": 7,
+      "number": 9,
       "checked": false,
       "id": 7
     },
@@ -780,7 +780,7 @@
       "username": "小企鹅",
       "tel": "111",
       "goodId": 11,
-      "number": 1,
+      "number": 3,
       "checked": false,
       "id": 9
     },
@@ -788,19 +788,26 @@
       "username": "小企鹅",
       "tel": "111",
       "goodId": 15,
-      "number": 1,
-      "checked": false,
-      "img": "/images/15/poster.jpg",
+      "number": 5,
+      "checked": true,
       "id": 10
     },
     {
       "username": "小企鹅",
       "tel": "111",
       "goodId": 13,
-      "number": 2,
+      "number": 3,
       "checked": false,
-      "img": "/images/13/poster.jpg",
       "id": 11
+    },
+    {
+      "username": "小企鹅",
+      "tel": "111",
+      "goodId": 4,
+      "number": 1,
+      "checked": false,
+      "img": "/images/4/poster.jpg",
+      "id": 12
     }
   ],
   "users": [

@@ -1,10 +1,9 @@
 <!--pages/shopcar/shopcar.wxml-->
-<mp-cells ext-class="my-cells" title="配送至旅游商贸" footer="左滑删除">
-    <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slidButtonTap">
-    <mp-cell wx:for="{{shopcarList}}" wx:key="index">
-    
+<mp-cells ext-class="my-cells" title="配送至旅游商贸" footer="左滑删除" >
+    <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slidButtonTap"  wx:for="{{shopcarList}}" wx:key="index">
+    <mp-cell >
        <view slot="icon" class="cellicon">
-       <checkbox checked="{{item.checked}}" ></checkbox>
+       <checkbox checked="{{item.checked}}" bindtap="handleTap" data-item="{{item}}"></checkbox>
        <image src="http://localhost:3000{{item.good.poster}}" mode="aspectFit"/>
        <view style="font-size: 13px;">
         <view>{{item.good.title}}x</view>
@@ -13,18 +12,18 @@
        </view>
 
        <view slot="footer" class="cellfooter">
-       <text>-</text>
+       <text bindtap="handleminus" data-item="{{item}}">-</text>
        <text>{{item.number}}</text>
-       <text>+</text>
+       <text bindtap="handleadd" data-item="{{item}}">+</text>
        </view>
     </mp-cell>
 </mp-slideview>
 
 </mp-cells>
-
+<wxs src="./shopcar.wxs" module="calobj"></wxs>
 <view class="footer">
 <checkbox></checkbox>
 <view>全选</view>
-<view style="margin-left: 20px;">合计：￥10000.00</view>
+<view style="margin-left: 20px;">合计：￥{{calobj.sum(shopcarList)}}</view>
 <button type="primary" size="mini">去结算</button>
 </view>
