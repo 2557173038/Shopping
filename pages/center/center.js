@@ -1,11 +1,12 @@
 // pages/center/center.js
+import checkAuth from "../../util/auth"
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        userInfo:null
     },
 
     /**
@@ -26,7 +27,13 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-
+        checkAuth(() => {
+        //    console.log("显示我的")
+        this.setData({
+            userInfo:wx.getStorageSync('token')
+        })
+        console.log(this.data.userInfo)
+        })
     },
 
     /**

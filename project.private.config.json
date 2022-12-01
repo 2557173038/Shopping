@@ -49,6 +49,13 @@
                     "query": "",
                     "launchMode": "default",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/center/center",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }

@@ -1,1 +1,13 @@
 /* pages/center/center.wxss */
+.userInfo view{
+
+}
+.userInfo{
+    background-color: rgb(212, 238, 97);
+    text-align: center;
+}
+.userInfo image{
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 50%;
+}
